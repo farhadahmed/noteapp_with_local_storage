@@ -1,8 +1,9 @@
 $(function() {
   var notesArr = []
 
-  //Creates array of values using localStorage.notes
+  //Have to first check if localStorage.notes exists.
   if(localStorage.notes) {
+    //Creates array of values using localStorage.notes
     var saved = localStorage.notes.split(",");
 
     //Appends each array item to the unordered list
