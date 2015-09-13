@@ -2,12 +2,14 @@ $(function() {
   var notesArr = []
 
   //Creates array of values using localStorage.notes
-  var saved = localStorage.notes.split(",");
+  if(localStorage.notes) {
+    var saved = localStorage.notes.split(",");
 
-  //Appends each array item to the unordered list
-  for (i = 0; i < saved.length; i++) {
-    $('<li>' + saved[i] + '</li>').appendTo('#notelist');
-  }
+    //Appends each array item to the unordered list
+    for (i = 0; i < saved.length; i++) {
+      $('<li>' + saved[i] + '</li>').appendTo('#notelist');
+    };
+  };
 
   //Prevents button click from refreshing page
   $('form').submit(function(e) {
